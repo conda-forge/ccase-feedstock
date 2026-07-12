@@ -34,11 +34,8 @@ requirements:
 
 tests:
   - script:
-      # NOTE: the 2nd condition works around a bug on win-64 Azure builders
-      - if: (build_platform == host_platform) and (target_platform != "win-arm64")
-        then:
-          - ccase --help
-          - ccase --version
+      - ccase --help
+      - ccase --version
   - package_contents:
       bin:
         - ccase
